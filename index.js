@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSession);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3004;
 app.listen(port, () => console.log('App listening on port ' + port));
 
 /*  PASSPORT SETUP  */
@@ -87,3 +87,9 @@ app.get('/user',
   connectEnsureLogin.ensureLoggedIn(),
   (req, res) => res.send({user: req.user})
 );
+
+// /* REGISTER SOME USERS */
+
+// UserDetails.register({username:'paul', active: false}, 'paul');
+// UserDetails.register({username:'jay', active: false}, 'jay');
+// UserDetails.register({username:'roy', active: false}, 'roy');
